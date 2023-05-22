@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Dynamic Website using node js</title>
+  </head>
+  <body>
+    {{>navbar data=details}}
+    
+    {{>slider slides= slides}} 
+
+
+    {{!-- banner1 section --}}
+
+    <section class="banner1_section background2 py-5">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-12">
+            
+            <h1>Start learning new technology here !!</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus soluta fuga est? Quaerat quidem non, velit adipisci, voluptate dolorum maxime eveniet hic vero quae ut soluta cum, amet quam quo.
+            </p>
+            <button class="btn btn-outline-primary">Start learning</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    {{!-- service section --}}
+
+    <section id="service_section" class="py-4">
+
+      <div class="container">
+
+        <h1 class="text-center text-secondary">Services that we provide</h1>
+
+      <div class="row mt-5">
+
+        {{!-- first service col --}}
+        {{#each services}}
+        <div class="col-md-4">
+           
+          <div class="card">
+            <div class="card-body">
+              <div class="container text-center py-3">
+                <i class="{{this.icon}} service_icon"></i>
+              </div>
+              <h5 class="card-title">{{this.title}}</h5>
+              <p>{{this.description}}</p>
+              
+              <a href="{{this.linkText}}">{{this.link}}</a>
+              <a href="#!" class="m1-3">Support</a>
+            </div>
+
+          </div>
+
+        </div>
+        {{/each}}
+
+      </div>
+
+      </div>
+    </section>
+
+    {{!-- banner2 section --}}
+
+    <section class="banner2_section py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center pt-5">
+            {{!-- left side --}}
+            <h3>
+              We work for people, not for money
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos aspernatur odit explicabo esse, eligendi consectetur sit eos dolores quia soluta cumque dolorem iusto perferendis provident eius possimus? Dolores, qui pariatur?
+            </p>
+            <button class="btn  btn-primary">Click here</button>
+          </div>
+          <div class="col-md-6">
+            {{!--right side  --}}
+            <img src="/static/images/bn1.jpg" style="" alt="" class="img-fluid">
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    {{!-- banner3 section --}}
+<section class="banner2_section py-5">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-6">
+            {{!--right side  --}}
+            <img src="/static/images/bn2.png" style="" alt="" class="img-fluid">
+          </div>
+          <div class="col-md-6 text-center pt-5">
+            {{!-- left side --}}
+            <h3>
+              We work for people, not for money
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos aspernatur odit explicabo esse, eligendi consectetur sit eos dolores quia soluta cumque dolorem iusto perferendis provident eius possimus? Dolores, qui pariatur?
+            </p>
+            <button class="btn  btn-primary">Click here</button>
+          </div>
+          
+        </div>
+      </div>
+
+    </section>
+
+
+    {{!-- Contact us section --}}
+    <section id="contact_us_section" class="py-5 background1">
+      <div class="container">
+        <h3 class="text-center text-muted">Contact Us</h3>
+          <div class="row">
+            <div class="col-md-12">
+
+                    <form action="/process-contact-form" method="post">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Your email address</label>
+                  <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="contactNumberField" class="form-label">Your contact number</label>
+                  <input name="phone" type="number" class="form-control" id="contactNumberField">
+                </div>
+
+                        <div class="form-floating my-2">
+                        <textarea name="comment" style="height: 200px;" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                        <label for="floatingTextarea">Comments</label>
+                      </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-dark">Submit</button>
+              </form>
+
+
+            </div>
+          </div>
+      </div>
+
+    </section>
+
+
+      {{!--about section  --}}
+      <section class="about_section py-5" id="about_section">
+        <div class="container text-center">
+          <div class="row">
+          <div class="col-md-12">
+            <h3>About this website</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed commodi maxime iste repudiandae laudantium dolorem minima eum qui molestiae quae et ex corporis, similique ullam! Eius autem quasi minus labore natus et molestias commodi excepturi illum quisquam deserunt enim architecto blanditiis doloremque itaque laborum, ipsum alias eveniet? Dignissimos, soluta eligendi eveniet nam deserunt, quae quia maxime delectus dolores, nobis voluptates iste sed nemo vel. Repudiandae consectetur nisi ab quasi id, quia unde voluptates tempore veritatis perferendis. Vel ullam voluptas officia cum? Ea, eaque reiciendis dolor, autem ipsam quo aliquid esse temporibus sapiente iure doloribus exercitationem fugit distinctio molestiae cum debitis alias dolorum facilis ab a asperiores minus cupiditate! Consectetur libero quae illum ducimus recusandae excepturi unde. Nemo voluptate autem officiis facere, ea, accusamus quaerat eaque nisi vel provident veritatis cum ad ducimus aut. Cum ducimus ratione eum consequuntur, accusamus quae maxime necessitatibus deserunt adipisci nam repellat sapiente! Autem, cupiditate atque? Adipisci dicta quo ex optio distinctio a fugiat officiis possimus, soluta ut nam incidunt iure maiores nobis fugit assumenda, autem error accusantium. Sunt sequi vel maiores, dolorum rem saepe veniam obcaecati voluptas asperiores quo libero delectus ab perferendis numquam soluta quam quasi, laudantium molestias. Tempore quaerat ipsum fugit minus aperiam?
+            </p>
+             <button class="btn btn-success">
+              Contact Us
+             </button>
+          </div>
+        </div>
+        </div>
+      </section>
+
+    <footer class="footer footer background1 text-center py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            @ 2023 Copyright: <span>Prince👑</span>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </body>
+</html>
